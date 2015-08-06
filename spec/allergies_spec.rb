@@ -9,4 +9,7 @@ describe 'Fixnum#allergies' do
   it 'it returns eggs and peanuts if score == 3' do
     expect(3.allergies).to eq(['peanuts', 'eggs'])
   end
+  it 'it returns eggs, peanuts, and shellfish if score ==7' do
+    expect(7.allergies).to eq(['shellfish', 'peanuts', 'eggs'])
+  end
 end

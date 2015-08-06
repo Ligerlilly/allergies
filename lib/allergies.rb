@@ -3,6 +3,11 @@ class Fixnum
   score = self
   allergens = Array.new
 
+  if score >= 4
+    allergens.push('shellfish')
+    score -= 4
+  end
+
 
   if score >= 2
     allergens.push('peanuts')

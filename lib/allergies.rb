@@ -3,14 +3,18 @@ class Fixnum
   score = self
   allergens = Array.new
 
-  eggs = 1
 
-
-  if (score -= 1) >= 0
-    allergens.push('eggs')
+  if score >= 2
+    allergens.push('peanuts')
+    score -= 2
   end
 
-  allergens    
+  if score >= 1
+    allergens.push('eggs')
+    score -= 1
+  end
+
+  allergens
 
   end
 end

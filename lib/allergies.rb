@@ -3,6 +3,11 @@ class Fixnum
   score = self
   allergens = Array.new
 
+  if score >= 16
+    allergens.push('tomatoes')
+    score -= 16
+  end
+
   if score >= 8
     allergens.push('strawberries')
     score -= 8

@@ -2,45 +2,11 @@ class Fixnum
   define_method (:allergies) do
   score = self
   allergens = Array.new
+  allergies = ['eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']
 
-  if score >= 128
-    allergens.push('cats')
-    score -= 128
-  end
-
-  if score >= 64
-    allergens.push('pollen')
-    score -= 64
-  end
-
-  if score >= 32
-    allergens.push('chocolate')
-    score -= 32
-  end
-
-  if score >= 16
-    allergens.push('tomatoes')
-    score -= 16
-  end
-
-  if score >= 8
-    allergens.push('strawberries')
-    score -= 8
-  end
-
-  if score >= 4
-    allergens.push('shellfish')
-    score -= 4
-  end
-
-  if score >= 2
-    allergens.push('peanuts')
-    score -= 2
-  end
-
-  if score >= 1
-    allergens.push('eggs')
-    score -= 1
+  while score > 0 do
+    allergens.push(allergies[(Math::log(score, 2)).floor])
+    score -= 2**((Math::log(score, 2)).floor)
   end
 
   allergens

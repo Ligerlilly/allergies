@@ -24,5 +24,8 @@ describe 'Fixnum#allergies' do
   it 'it returns eggs, peanuts, shellfish, strawberries, tomatoes, chocolate, and pollen if score == 127' do
     expect(127.allergies).to eq(['pollen', 'chocolate', 'tomatoes', 'strawberries', 'shellfish', 'peanuts', 'eggs'])
   end
+  it 'it returns eggs, peanuts, shellfish, strawberries, tomatoes, chocolate, pollen, and cats if score == 255' do
+    expect(255.allergies).to eq(['cats', 'pollen', 'chocolate', 'tomatoes', 'strawberries', 'shellfish', 'peanuts', 'eggs'])
+  end
 
 end
